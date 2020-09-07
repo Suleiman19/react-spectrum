@@ -19,6 +19,8 @@ interface PressableProps extends PressProps {
 }
 
 export const Pressable = React.forwardRef(({children, ...props}: PressableProps, ref: RefObject<HTMLElement>) => {
+  // FIXME ???
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   ref = ref || useRef();
   let {pressProps} = usePress({...props, ref});
   let child = React.Children.only(children);
